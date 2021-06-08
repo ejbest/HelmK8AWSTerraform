@@ -1,0 +1,14 @@
+kops create cluster \
+--cloud=aws \
+--name=course.auto-deploy.net \
+--state=s3://erich.ej.best.fl-gmail.com \
+--authorization RBAC \
+--zones=us-east-1a \
+--node-count=2 \
+--node-size=t2.micro \
+--master-size=t2.micro \
+--master-count=1 \
+--dns-zone=course.auto-deploy.net \
+--out=terraform_code \
+--target=terraform \
+--ssh-public-key=~/.ssh/id_san5.pub
